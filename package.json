@@ -20,8 +20,11 @@
   },
   "homepage": "https://github.com/GilvanHenrique/xyxsecretm#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "config": "^1.26.1",
     "express": "^4.15.3",
+    "mongoose": "^4.10.8",
+    "morgan": "^1.8.2",
     "nodemon": "^1.11.0"
   }
 }
