@@ -21,6 +21,7 @@
   "homepage": "https://github.com/GilvanHenrique/xyxsecretm#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "busca-cep": "^0.3.6",
     "config": "^1.26.1",
     "express": "^4.15.3",
     "mongoose": "^4.10.8",
