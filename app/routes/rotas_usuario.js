@@ -5,22 +5,23 @@ var routes = express.Router()
 
 // rota para retornar todos os usuarios (GET http://localhost:8080/api/users)
 routes.get('/users', (req, res) => {
-  User.find({}).select('_id nome usrnome').exec().then(
+  User.find({}).exec().then(
     users => {
-      res.json({message: "Usuários do Secret Mail."})
+      res.json({users})
     }, erro => {
-      res.json({message: "erro"})
+      res.json({sucess: false, details: erro})
     })
 })
 
-// metodo para buscar um endereco através do cep
-buscaCep('59374-000')
-  .then(endereco => {
-    console.log(endereco.localidade);
-    console.log(endereco.uf);
-  })
-  .catch(erro => {
-    console.log('Erro: statusCode ${erro.statusCode} e mensagem ${erro.message}');
-  });
+// rota para buscar um endereco através do cep
+routes.get('/buscaCEP', (req, res) => {
+  buscaCep('59374-000').then(endereco => {
+    res.json({cidade: endereco.localidade,
+              estado: endereco.uf})
+    }, erro => {
+      res.json({sucess: false, details: erro});
+    })
+})
+
 
 module.exports = routes;

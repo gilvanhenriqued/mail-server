@@ -4,7 +4,7 @@ var app = express()
 var config = require('config')
 var morgan = require('morgan');
 var mongoose = require('mongoose');
-var User = require('./app/models/usuario')
+var Usuario = require('./app/models/usuario')
 var router = express.Router()
 
 mongoose.Promise = global.Promise;

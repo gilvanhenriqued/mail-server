@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 var usuario = new Schema ({
   nome: {type: String},
   usrnome: {type: String},
-  senha: {type: String, min: 6, max: 14},
+  senha: {type: String},
   dataNascimento: {type: Date}
   // endereco: {type: Endereco}
 })
