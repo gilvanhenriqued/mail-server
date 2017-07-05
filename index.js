@@ -12,8 +12,8 @@ mongoose.Promise = global.Promise;
 app.use(bodyParser.json())
 mongoose.connect(config.database); // connect to database
 
-
 router.use(require('./app/rotas/rotas_usuario'))
+router.use(require('./app/rotas/rotas_mensagem'))
 app.use('/api', router)
 
 var server = app.listen(8080, function(){
