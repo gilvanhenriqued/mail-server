@@ -4,26 +4,38 @@ var app = express()
 var config = require('config')
 var morgan = require('morgan');
 var mongoose = require('mongoose');
-var Usuario = require('./app/modelos/usuario')
 var router = express.Router()
 
 mongoose.Promise = global.Promise;
 
 app.use(bodyParser.json())
-mongoose.connect(config.database); // connect to database
 
+app.set('superSecret', config.secret); // variavel secreta de autenticação
+
+router.use(require('./app/rotas/rotas_autenticacao'))
 router.use(require('./app/rotas/rotas_usuario'))
 router.use(require('./app/rotas/rotas_mensagem'))
+
+// app.use(express.static(__dirname + '/frontEnd'))
 app.use('/api', router)
 
+mongoose.connect(config.database,{
+  useMongoClient: true
+});
+
 var server = app.listen(8080, function(){
-  console.log('Example app listening on port 8080!')
+  console.log('Secret Mail executando na porta 8080!')
   console.log(config.ambiente)
 })
 
-app.get('/', function(req, res) {
-    res.send('Olá! Seja Bem vindo ao Secret Mail!');
-});
+// configurações da autenticação com token
 
+// jwt - criar, assinar, e verificar tokens
+var jwt = require('jsonwebtoken');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// usado para requisições de log no console
+app.use(morgan('dev'));
 
 module.exports = server;

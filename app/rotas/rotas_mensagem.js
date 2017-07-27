@@ -24,7 +24,7 @@ routes.get('/mensagens/:id', (req, res) => {
       }
     }, erro => {
         responder(res, false, "Mensagem não encontrada.", undefined)
-    }) // then
+    })
 })
 
 // POST – Rota para criar uma nova mensagem (http://localhost:8080/api/mensagens)
@@ -56,7 +56,7 @@ routes.delete('/mensagens/:id', (req, res) => {
       }
     }, erro => {
         responder(res, false, "Mensagem não encontrado.", undefined)
-    }) // then
+    })
 })
 
 // POST – Rota para enviar uma nova mensagem (http://localhost:8080/api/mensagens)
@@ -65,11 +65,11 @@ routes.delete('/mensagens/:id', (req, res) => {
 
 /* função para responder os erros e sucessos
 valores padrão passados por parametro */
-function responder(res, success=true, message="", result){
+function responder(res, sucesso=true, mensagem="", resultado){
   res.json({
-    success: success,
-    result: result,
-    message: message
+    sucesso: sucesso,
+    resultado: resultado,
+    mensagem: mensagem
   })
 }
 

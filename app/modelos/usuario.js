@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 var usuario = new Schema ({
   nome: {type: String},
   usrnome: {type: String},
+	cpf: {type: String},
   senha: {type: String},
 	genero: {type: String},
 	emailSecundario: {type: String},
