@@ -3,10 +3,10 @@ var mongoose = require('mongoose'),
 		ObjectId = Schema.ObjectId;
 
 var usuario = new Schema ({
-  nome: {type: String},
-  usrnome: {type: String},
-	cpf: {type: String},
-  senha: {type: String},
+  nome: {type: String, require: "Defina seu nome", maxlength: 9},
+  usrnome: {type: String, unique: true},
+	cpf: {type: String, minlength: 14},
+  senha: {type: String, minlength: 8},
 	genero: {type: String},
 	emailSecundario: {type: String},
   dataNascimento: {type: Date}
