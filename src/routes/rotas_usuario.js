@@ -1,5 +1,5 @@
 var express = require('express')
-var Usuario = require('../modelos/usuario')
+var Usuario = require('../models/usuario')
 var buscaCep = require('busca-cep');
 var routes = express.Router()
 

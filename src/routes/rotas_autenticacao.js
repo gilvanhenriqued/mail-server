@@ -1,6 +1,6 @@
 var express = require('express')
 var app = express()
-var Usuario = require('../modelos/usuario')
+var Usuario = require('../models/usuario')
 var config = require('config')
 var jwt = require('jsonwebtoken')
 var routes = express.Router()

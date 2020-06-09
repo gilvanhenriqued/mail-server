@@ -1,5 +1,5 @@
 var express = require('express')
-var Mensagem = require('../modelos/mensagem')
+var Mensagem = require('../models/mensagem')
 var routes = express.Router()
 
 // GET – Rota para obter todas as mensagens (http://localhost:8080/api/mensagens)
