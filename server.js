@@ -24,7 +24,7 @@ mongoose.connect(config.database,{
 });
 
 var server = app.listen(8080, function(){
-  console.log('Secret Mail executando na porta 8080!')
+  console.log('E-mail executando na porta 8080!')
   console.log(config.ambiente)
 })
 
