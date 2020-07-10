@@ -2,8 +2,8 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var app = express()
 var config = require('config')
-var morgan = require('morgan');
-var mongoose = require('mongoose');
+var morgan = require('morgan')
+var mongoose = require('mongoose')
 var router = express.Router()
 
 mongoose.Promise = global.Promise;
@@ -12,9 +12,9 @@ app.use(bodyParser.json())
 
 app.set('superSecret', config.secret); // variavel secreta de autenticação
 
-router.use(require('./app/rotas/rotas_autenticacao'))
-router.use(require('./app/rotas/rotas_usuario'))
-router.use(require('./app/rotas/rotas_mensagem'))
+router.use(require('./src/routes/rotas_autenticacao'))
+router.use(require('./src/routes/rotas_usuario'))
+router.use(require('./src/routes/rotas_mensagem'))
 
 // app.use(express.static(__dirname + '/frontEnd'))
 app.use('/api', router)
