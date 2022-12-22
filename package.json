@@ -24,7 +24,7 @@
     "busca-cep": "^0.3.6",
     "config": "^1.26.1",
     "express": "^4.15.3",
-    "jsonwebtoken": "^7.4.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^4.10.8",
     "morgan": "^1.8.2",
     "nodemon": "^1.11.0"
