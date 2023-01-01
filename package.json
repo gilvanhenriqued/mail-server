@@ -22,7 +22,7 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "busca-cep": "^0.3.6",
-    "config": "^1.26.1",
+    "config": "^3.3.8",
     "express": "^4.15.3",
     "jsonwebtoken": "^7.4.1",
     "mongoose": "^4.10.8",
